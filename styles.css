@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *{
     margin: 0;
@@ -19,12 +20,13 @@ body{
     border-radius: 15px;
     padding: 15px 10px;
     text-align: center;
-    max-width: 400px;
+    width: 600px;
 }
 
 h1{
     margin: 10px 0;
     padding: 15px 10px;
+    font-family: "Inter", sans-serif;
 }
 
 button{
@@ -58,6 +60,8 @@ p{
     margin: 10px 5px;
     padding: 10px;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
     font-style: italic;
+    font-family: "Inter", sans-serif;
+
 }
