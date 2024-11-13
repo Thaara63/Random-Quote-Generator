@@ -12,8 +12,9 @@ const quotes =[
 ];
 
 const usedIndex = new Set();
-
 const randomQuote = document.getElementById("randomQuote");
+let usedQuote = [];
+let currentQuoteIndex = -1;
 
 function generateRandomQuote(){
 
@@ -28,10 +29,39 @@ function generateRandomQuote(){
         if(usedIndex.has(randomIndex)){
             continue;
         }
-        
+
         randomQuote.textContent = `"${quotes[randomIndex]}"`;
         usedIndex.add(randomIndex);
+        usedQuote.push(quotes[randomIndex]);
+        currentQuoteIndex = usedQuote.length - 1;
         break;
     }
- 
+
+    return usedQuote;
+}
+
+
+
+function goToPrev(){
+
+    if (currentQuoteIndex > 0) {  
+        currentQuoteIndex--;  
+        randomQuote.textContent = `"${usedQuote[currentQuoteIndex]}"`;
+    } else {
+        randomQuote.textContent = `"${usedQuote[currentQuoteIndex]}"`; // Show the first quote
+    }
+
+
+}
+
+
+function goToNext(){
+
+    if(currentQuoteIndex < usedQuote.length - 1){
+        currentQuoteIndex++;
+        randomQuote.textContent = `"${usedQuote[currentQuoteIndex]}"`;
+    }else {
+        randomQuote.textContent = `"${usedQuote[currentQuoteIndex]}"`; // Show the last quote
+    }
+
 }
